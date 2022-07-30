@@ -11,7 +11,7 @@ class Command(BaseCommand):
         file = os.path.join(BASE_DIR, 'frontend', 'vue.config.js')
         new_content = ''
         with open(file, 'r') as f:
-            for line in f.readlines():
+            for line in f:
                 line = line.strip('\n')
                 if 'const ASSET_DIR =' in line:
                     asset_dir = settings.STATIC_URL.lstrip('/').rstrip('/')
